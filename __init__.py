@@ -76,6 +76,7 @@ class MyProperties(PropertyGroup):
 class OBJ_OT_DuplicateMirrorRename(Operator):
     bl_label = "Duplicate and mirror selected objects"
     bl_idname = "littlehelpers.duplicatemirrorrename"
+    bl_options = {'REGISTER', 'UNDO'}
 
     def execute(self, context):
         scn = bpy.context.scene
@@ -120,6 +121,7 @@ class OBJ_OT_DuplicateMirrorRename(Operator):
 class OBJ_OT_PurgeOrphanData(Operator):
     bl_label = "Purge Orphan Data"
     bl_idname = "littlehelpers.purgeorphandata"
+    bl_options = {'REGISTER', 'UNDO'}
 
     def execute(self, context):
         bpy.ops.outliner.orphans_purge()
@@ -130,11 +132,18 @@ class OBJ_OT_PurgeOrphanData(Operator):
 class OBJ_OT_DeleteMaterialsFromSelected(Operator):
     bl_label = "Delete Materials from selected"
     bl_idname = "littlehelpers.deletematerialsfromselected"
+    bl_options = {'REGISTER', 'UNDO'}
 
     def execute(self, context):
-        # ToDo: Clean all materials
-        # Selet all Objects, delete material slots
-        # Delete all materials in scene
+        selectedObjects = bpy.context.selected_objects
+ 
+        listOfObjs=[]
+        for obj in selectedObjects:
+            listOfObjs.append(obj)
+            bpy.context.view_layer.objects.active = obj
+            for slot in obj.material_slots:
+                obj.active_material_index = 0
+                bpy.ops.object.material_slot_remove()
 
         return {'FINISHED'}
 
