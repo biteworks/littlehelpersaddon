@@ -2,7 +2,7 @@ bl_info = {
     "name": "LittleHelpers Addon",
     "description": "A collection of little helper functions",
     "author": "Tobias Wilhelm (biteworks)",
-    "version": (1, 0, 0),
+    "version": (1, 0, 1),
     "blender": (2, 80, 0),
     "location": "3D View > Tools",
     "category": "Generic"
@@ -179,11 +179,12 @@ class OBJECT_PT_LittleHelpersPanel(Panel):
         row.prop(littlehelpersprops, "yAxis", text="Y", toggle=True)
         row.prop(littlehelpersprops, "zAxis", text="Z", toggle=True)
         row = box.row()
-        row.prop(littlehelpersprops, "renamingOn", text="Find/Replace enabled")
-        row = box.row()
-        row.prop(littlehelpersprops, "searchString", text="Find")
-        row = box.row()
-        row.prop(littlehelpersprops, "replaceString", text="Replace")
+        row.prop(littlehelpersprops, "renamingOn", text="Find/Replace")
+        if littlehelpersprops.renamingOn:
+            row = box.row()
+            row.prop(littlehelpersprops, "searchString", text="Find")
+            row = box.row()
+            row.prop(littlehelpersprops, "replaceString", text="Replace")
         row = box.row()
         row.operator("littlehelpers.duplicatemirrorrename")
         
