@@ -7,11 +7,6 @@ class OBJECT_PT_LittleHelpersPanel(bpy.types.Panel):
     bl_space_type = "VIEW_3D"
     bl_region_type = "UI"
     bl_category = "LittleHelpers"
-    bl_context = "objectmode"
-
-    @classmethod
-    def poll(self,context):
-        return context.object is not None
 
     def draw(self, context):
         layout = self.layout

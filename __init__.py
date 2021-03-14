@@ -4,7 +4,7 @@ bl_info = {
     "author": "Tobias Wilhelm (biteworks)",
     "version": (1, 0, 2),
     "blender": (2, 80, 0),
-    "location": "3D View > Tools",
+    "location": "3D View > Tools > LittleHelpers",
     "category": "Generic"
 }
 
