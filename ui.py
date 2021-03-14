@@ -1,7 +1,7 @@
 import bpy
 import addon_utils
 
-class OBJECT_PT_LittleHelpersPanel(bpy.types.Panel):
+class PT_LittleHelpersPanel(bpy.types.Panel):
     bl_label = "LittleHelpers Addon"
     bl_idname = "OBJECT_PT_custom_panel"
     bl_space_type = "VIEW_3D"

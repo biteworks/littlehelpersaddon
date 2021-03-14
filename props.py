@@ -1,8 +1,7 @@
 import bpy
 import addon_utils
 
-class MyProperties(bpy.types.PropertyGroup):
-    
+class LittleHelpersProperties(bpy.types.PropertyGroup):
     xAxis: bpy.props.BoolProperty(
         name="X-Axis",
         description="X-Axis",

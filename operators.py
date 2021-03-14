@@ -1,7 +1,7 @@
 import bpy
 import addon_utils
 
-class OBJ_OT_DuplicateMirrorRename(bpy.types.Operator):
+class OT_DuplicateMirrorRename(bpy.types.Operator):
     bl_label = "Duplicate and mirror selected objects"
     bl_idname = "littlehelpers.duplicatemirrorrename"
     bl_options = {'REGISTER', 'UNDO'}
@@ -47,7 +47,7 @@ class OBJ_OT_DuplicateMirrorRename(bpy.types.Operator):
         return {'FINISHED'}
 
 
-class OBJ_OT_PurgeOrphanData(bpy.types.Operator):
+class OT_PurgeOrphanData(bpy.types.Operator):
     bl_label = "Purge Orphan Data"
     bl_idname = "littlehelpers.purgeorphandata"
     bl_options = {'REGISTER', 'UNDO'}
@@ -58,7 +58,7 @@ class OBJ_OT_PurgeOrphanData(bpy.types.Operator):
         return {'FINISHED'}
 
 
-class OBJ_OT_DeleteMaterialsFromSelected(bpy.types.Operator):
+class OT_DeleteMaterialsFromSelected(bpy.types.Operator):
     bl_label = "Delete Materials from selected"
     bl_idname = "littlehelpers.deletematerialsfromselected"
     bl_options = {'REGISTER', 'UNDO'}

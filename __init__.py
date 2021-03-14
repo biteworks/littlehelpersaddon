@@ -1,9 +1,9 @@
 bl_info = {
     "name": "LittleHelpers Addon",
-    "description": "A collection of little helper functions",
+    "description": "A collection of helper functions",
     "author": "Tobias Wilhelm (biteworks)",
     "version": (1, 0, 2),
-    "blender": (2, 80, 0),
+    "blender": (2, 90, 0),
     "location": "3D View > Tools > LittleHelpers",
     "category": "Generic"
 }
@@ -19,11 +19,11 @@ from . ui import *
 # ------------------------------------------------------------------------
 
 classes = (
-    MyProperties,
-    OBJ_OT_DuplicateMirrorRename,
-    OBJ_OT_PurgeOrphanData,
-    OBJ_OT_DeleteMaterialsFromSelected,
-    OBJECT_PT_LittleHelpersPanel
+    LittleHelpersProperties,
+    OT_DuplicateMirrorRename,
+    OT_PurgeOrphanData,
+    OT_DeleteMaterialsFromSelected,
+    PT_LittleHelpersPanel
 )
 
 def register():
@@ -31,7 +31,7 @@ def register():
     for cls in classes:
         register_class(cls)
 
-    bpy.types.Scene.littlehelpersprops = bpy.props.PointerProperty(type=MyProperties)
+    bpy.types.Scene.littlehelpersprops = bpy.props.PointerProperty(type=LittleHelpersProperties)
 
 def unregister():
     from bpy.utils import unregister_class
