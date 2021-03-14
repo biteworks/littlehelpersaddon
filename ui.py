@@ -38,4 +38,4 @@ class PT_LittleHelpersPanel(bpy.types.Panel):
         row = box.row()
         row.operator("littlehelpers.deletematerialsfromselected")
         row = box.row()
-        row.operator("littlehelpers.purgeorphandata")
+        row.operator("outliner.orphans_purge", text="Purge Orphan Data")

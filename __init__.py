@@ -21,7 +21,6 @@ from . ui import *
 classes = (
     LittleHelpersProperties,
     OT_DuplicateMirrorRename,
-    OT_PurgeOrphanData,
     OT_DeleteMaterialsFromSelected,
     PT_LittleHelpersPanel
 )
