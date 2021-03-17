@@ -2,7 +2,7 @@ bl_info = {
     "name": "LittleHelpers Addon",
     "description": "A collection of helper functions",
     "author": "Tobias Wilhelm (biteworks)",
-    "version": (1, 0, 2),
+    "version": (1, 0, 3),
     "blender": (2, 90, 0),
     "location": "3D View > Tools > LittleHelpers",
     "category": "Generic"
