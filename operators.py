@@ -16,6 +16,22 @@ class OT_DuplicateMirrorRename(bpy.types.Operator):
 
         selectedObjects = bpy.context.selected_objects
 
+        # Set axis variables
+        if littlehelpersprops.xAxis:
+            xAxis = -1.0
+        else:
+            xAxis = 1.0
+
+        if littlehelpersprops.yAxis:
+            yAxis = -1.0
+        else:
+            yAxis = 1.0
+
+        if littlehelpersprops.zAxis:
+            zAxis = -1.0
+        else: 
+            zAxis = 1.0
+
         if len(selectedObjects) > 0:
             for obj in selectedObjects:
                 if obj.type == "MESH":
@@ -40,7 +56,7 @@ class OT_DuplicateMirrorRename(bpy.types.Operator):
                     bpy.context.scene.cursor.location = (0.0, 0.0, 0.0)
                     bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
                     bpy.ops.object.origin_set(type='ORIGIN_CURSOR', center='MEDIAN')
-                    bpy.ops.transform.mirror(orient_type='GLOBAL', constraint_axis=(littlehelpersprops.xAxis, littlehelpersprops.yAxis, littlehelpersprops.zAxis), use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False)
+                    bpy.ops.transform.resize(value=(xAxis, yAxis, zAxis), orient_type='GLOBAL', use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False)
                     bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
                     bpy.ops.object.select_all(action='DESELECT')
 
