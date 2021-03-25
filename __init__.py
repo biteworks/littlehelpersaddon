@@ -3,7 +3,7 @@ bl_info = {
     "description": "A collection of helper functions",
     "author": "Tobias Wilhelm (biteworks)",
     "version": (1, 0, 4),
-    "blender": (2, 92, 0),
+    "blender": (2, 83, 0),
     "location": "3D View > Tools > LittleHelpers",
     "category": "Generic"
 }
